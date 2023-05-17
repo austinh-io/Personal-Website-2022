@@ -14,7 +14,6 @@ body {
 
 .wrapper {
   position: relative;
-  margin-top: 5rem;
   height: 100svh;
   height: 100vh;
   display: flex;
@@ -26,18 +25,12 @@ body {
 section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
 }
 
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 2rem;
   margin-inline: 5vw;
-
-  max-width: 100ch;
 
   border: 1px rgb(255, 255, 255, 0.6) solid;
   background-color: rgba(255, 255, 255, 0.3);
@@ -45,14 +38,13 @@ section {
 }
 
 .main-content {
-  margin-bottom: 5rem;
 }
 
-.content-title-container {
+.title-container {
   display: flex;
 }
 
-.content-title-container img {
+.title-container img {
   border-radius: 10px;
   width: 30%;
   aspect-ratio: 1/1;
@@ -76,23 +68,39 @@ section {
   padding: 0;
 }
 
+.content-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  max-width: 100ch;
+  font-size: 1.2rem;
+}
+
 .link-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  width: 100%;
+
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
+  border: 1px solid black;
 }
 
-.icon {
-  margin-right: 10px;
-  margin-left: 0;
-  font-size: 1.4rem;
+.link-list li {
+  display: flex;
+  flex: 1;
+  width: 100%;
 }
 
 .message-container {
+  display: none;
   max-width: 100ch;
   background: none;
   border: none;
@@ -100,7 +108,7 @@ section {
 }
 
 .button {
-  display: inline-block;
+  display: flex;
   border-radius: 5px;
 
   background-image: linear-gradient(
@@ -112,32 +120,44 @@ section {
 
   border: none;
   color: #ffffff;
-  text-align: center;
   font-size: 1.2rem;
   padding: 18px;
   width: 250px;
-  transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
+  margin: 10px;
 
   background-position: center;
-  transition: background-position 0.5s ease;
+  transition: all 0.5s ease;
 }
 
-.button:hover {
-  background-position: right center;
-  color: #fff;
-  text-decoration: none;
+.button-icon {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
 }
 
-.button .button-animation span {
+.button-text {
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.08ch;
+  margin-left: auto;
+}
+
+.button-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.button .button-content span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.button .button-animation span:after {
+.button .button-content span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -146,11 +166,15 @@ section {
   transition: 0.5s;
 }
 
-.button:hover .button-animation span {
+.button:hover {
+  background-position: right center;
+}
+
+.button:hover .button-content span {
   padding-right: 25px;
 }
 
-.button:hover .button-animation span:after {
+.button:hover .button-content span:after {
   opacity: 1;
   right: 0;
 }
