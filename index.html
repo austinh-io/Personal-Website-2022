@@ -16,6 +16,12 @@
       href="style.css"
     />
 
+    <script
+      defer
+      async
+      src="script.js"
+    ></script>
+
     <!-- Our project just needs Font Awesome Solid + Brands -->
     <script
       defer
@@ -32,7 +38,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="custom-shape-divider-top-1684333398">
+      <div class="custom-shape-divider-top-1684346766">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -59,30 +65,29 @@
       <div class="container main-content">
         <section>
           <div class="title-container">
-            <img
+            <!-- <img
               src="https://picsum.photos/200"
               class="title-image"
-            />
+            /> -->
             <div class="content-title-text">
-              <h2 class="title">Hello</h2>
-              <h1 class="subtitle">I'm Austin Hagel</h1>
+              <h2 class="title">
+                Hello<span class="title-icon fa-solid fa-hand-peace"></span>
+              </h2>
+              <h1 class="subtitle">
+                I'm <span class="my-name">Austin Hagel</span>
+              </h1>
             </div>
           </div>
           <div class="content-container">
             <p class="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
-              cupiditate quisquam perferendis officiis, placeat corporis velit
-              at reiciendis voluptates doloremque aut, vero similique obcaecati?
-              Dignissimos possimus exercitationem nisi quis, neque eius saepe
-              deleniti sequi dolorem minus, dolorum est ducimus magni at
-              asperiores atque. Reprehenderit, voluptates itaque sunt dicta odit
-              expedita.
+              I specialize in web development and digital design.
             </p>
             <ul class="link-list">
               <li>
                 <a
                   class="button"
-                  href="https://example.com/"
+                  href="https://austinhagel.myportfolio.com/"
+                  target="_blank"
                 >
                   <span class="button-content">
                     <span class="button-icon icon fa-solid fa-briefcase"></span>
@@ -93,7 +98,8 @@
               <li>
                 <a
                   class="button"
-                  href="https://example.com/"
+                  href="https://github.com/geminivega"
+                  target="_blank"
                 >
                   <span class="button-content">
                     <span class="button-icon fa-brands fa-github-alt"></span>
@@ -101,21 +107,23 @@
                   </span>
                 </a>
               </li>
-              <li>
+              <!-- <li>
                 <a
                   class="button"
                   href="https://example.com/"
+                  target="_blank"
                 >
                   <span class="button-content">
                     <span class="button-icon fa-brands fa-youtube"></span>
                     <span class="button-text">Youtube</span>
                   </span>
                 </a>
-              </li>
+              </li> -->
               <li>
                 <a
                   class="button"
-                  href="https://example.com/"
+                  href="https://www.instagram.com/gemini.vega/"
+                  target="_blank"
                 >
                   <span class="button-content">
                     <span class="button-icon fa-brands fa-instagram"></span>
@@ -126,7 +134,8 @@
               <li>
                 <a
                   class="button"
-                  href="https://example.com/"
+                  href="https://www.linkedin.com/in/austinhagel/"
+                  target="_blank"
                 >
                   <span class="button-content">
                     <span class="button-icon fa-brands fa-linkedin"></span>
@@ -137,54 +146,118 @@
             </ul>
           </div>
         </section>
+        <button
+          data-open-modal
+          class="button contact-button"
+        >
+          <span class="button-content">
+            <span class="button-text">Contact Me</span>
+          </span>
+        </button>
       </div>
 
-      <div class="container message-container">
-        <section>
+      <dialog
+        data-modal
+        class="modal"
+      >
+        <div class="message-container">
           <h2 class="message-title">Send me a message!</h2>
-          <form class="message-form">
-            <label for="firstName">First Name</label><br />
-            <input
-              type="text"
-              id="firstName"
-            /><br />
+          <form
+            class="message-form"
+            method="post"
+            name="contact_form"
+            action="form.php"
+          >
+            <div class="form-name-section">
+              <div class="form-name-input">
+                <label
+                  for="firstName"
+                  class="input-label"
+                  >First Name</label
+                ><br />
+                <input
+                  type="text"
+                  id="firstName"
+                  placeholder="first name"
+                  required
+                />
+              </div>
 
-            <label for="lastName">Last Name<span>optional</span></label
+              <div class="form-name-input">
+                <label
+                  for="lastName"
+                  class="input-label"
+                  >Last Name</label
+                ><br />
+                <input
+                  type="text"
+                  id="lastName"
+                  placeholder="last name"
+                />
+              </div>
+            </div>
+
+            <label
+              for="email"
+              class="input-label"
+              >Email</label
             ><br />
             <input
-              type="text"
-              id="lastName"
-            /><br />
-
-            <label for="email">Email</label><br />
-            <input
-              type="text"
+              type="email"
               id="email"
+              placeholder="email"
+              required
             /><br />
 
-            <label for="subjuect">Message Subject</label><br />
+            <label for="subject">Message Subject</label><br />
             <input
               type="text"
               id="subject"
+              placeholder="subject"
+              size="50"
+              required
             /><br />
 
-            <label for="message">Your message:</label><br />
+            <label for="message">Your message</label><br />
             <input
-              type="text"
+              type="textarea"
               id="message"
-            /><br />
+              placeholder="your message"
+              size="500"
+              required
+            />
 
-            <label for="submitMessage">Submit</label>
-            <input
-              class="button"
-              type="submit"
-              id="submitMessage"
-            /><br />
+            <div class="form-button-group">
+              <button
+                class="button form-button button-submit"
+                type="submit"
+                id="submitMessage"
+              >
+                <span class="button-content">
+                  <span
+                    class="button-icon fa-solid fa-arrow-right-to-bracket"
+                  ></span>
+                  <span class="button-text">Submit</span>
+                </span>
+              </button>
+
+              <button
+                class="button form-button button-cancel"
+                type="submit"
+                formmethod="dialog"
+                id="form-close-button"
+              >
+                <span class="button-content">
+                  <span class="button-icon fa-solid fa-rectangle-xmark"></span>
+                  <span class="button-text">Cancel</span>
+                </span>
+              </button>
+            </div>
           </form>
-        </section>
-      </div>
+        </div>
+      </dialog>
 
-      <div class="custom-shape-divider-bottom-1684333343">
+      <div class="custom-shape-divider-bottom-1684347010">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -192,7 +265,7 @@
           preserveAspectRatio="none"
         >
           <path
-            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
             class="shape-fill"
           ></path>
         </svg>
